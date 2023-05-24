@@ -8,7 +8,7 @@ using System.Collections;
      bool canClimb = false;
      public float speed = 1.5f;
  
-     void OnCollisionEnter(Collision coll)
+     void OnCollisionEnter(Collision coll) // If Player Collides with The Ladder Climbing Will become Possible
      {
          if (coll.gameObject.tag == "Player")
          {
@@ -17,8 +17,8 @@ using System.Collections;
          }
      }
  
-     void OnCollisionExit(Collision coll2)
-     {
+     void OnCollisionExit(Collision coll2) // If Player exits Collision with The Ladder Climbing Will Not be Possible
+    {
          if (coll2.gameObject.tag == "Player")
          {
              canClimb = false;
