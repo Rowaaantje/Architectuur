@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c860cbb570e3da442b860e96d179c77f
+guid: a38a7196c5f2c2643bb95094ec6f584a
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
@@ -7,8 +7,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: bordmap
-    second: {fileID: 2100000, guid: 85fdc264142fd21488b04c5bd7f12f7e, type: 2}
+      name: foldedsheet
+    second: {fileID: 2100000, guid: e1e213c488e2e174392ee2ffc7d023b5, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

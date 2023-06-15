@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c860cbb570e3da442b860e96d179c77f
+guid: 21399b2759a4fd54797b1d20c5a53f76
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
@@ -7,8 +7,13 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: bordmap
-    second: {fileID: 2100000, guid: 85fdc264142fd21488b04c5bd7f12f7e, type: 2}
+      name: rope
+    second: {fileID: 2100000, guid: d13a3eb83fe53254c87e718053adb867, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: 896-8968612_minecraft-heart-minecraft-health-bar
+    second: {fileID: 2800000, guid: 2ef1b7ef805583b4c947d7578ea99c5e, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0

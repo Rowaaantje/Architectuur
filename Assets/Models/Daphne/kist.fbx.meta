@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c860cbb570e3da442b860e96d179c77f
+guid: 4f468f8e5c3353444b58f9a32ebb7973
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
@@ -7,8 +7,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: bordmap
-    second: {fileID: 2100000, guid: 85fdc264142fd21488b04c5bd7f12f7e, type: 2}
+      name: KistBase
+    second: {fileID: 2100000, guid: b969959e12b35ac46a3fff162ccc887f, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

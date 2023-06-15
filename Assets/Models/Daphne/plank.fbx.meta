@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c860cbb570e3da442b860e96d179c77f
+guid: d4087a523bb71cb4c9f9d203932e0a56
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
@@ -7,8 +7,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: bordmap
-    second: {fileID: 2100000, guid: 85fdc264142fd21488b04c5bd7f12f7e, type: 2}
+      name: Plank
+    second: {fileID: 2100000, guid: 5450ed967a4f0d540a266f1d4935b89f, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
