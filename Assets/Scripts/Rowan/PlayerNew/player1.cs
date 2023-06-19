@@ -48,6 +48,7 @@ public class player1 : MonoBehaviour
     Vector3 moveDirection;
 
     Rigidbody rb;
+    static public bool dialogue = false;
 
     public MovementState state; // always stores the current state the player is in
 
@@ -87,7 +88,10 @@ public class player1 : MonoBehaviour
 
     private void FixedUpdate()
     {
-        MovePlayer();
+        if (!dialogue)
+        {
+            MovePlayer();
+        }
     }
 
     private void MyInput()
