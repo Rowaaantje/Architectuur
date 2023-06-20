@@ -4,7 +4,11 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - clone
+  - Button
+  - Planken
+  - IronPlates
+  - Nails
+  - Screw
   layers:
   - Default
   - TransparentFX
@@ -13,7 +17,7 @@ TagManager:
   - Water
   - UI
   - Ground
-  - 
+  - ButtonInteraction
   - Pickup
   - 
   - 
