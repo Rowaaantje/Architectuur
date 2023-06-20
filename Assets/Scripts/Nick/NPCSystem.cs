@@ -12,19 +12,19 @@ public class NPCSystem : MonoBehaviour
 
     void Update()
     {
-        if(player_detection && Input.GetKeyDown(KeyCode.F) && !player1.dialogue)
+        if(player_detection && Input.GetKeyDown(KeyCode.F) && !player1.dialogue) // If F is pressed, Play Dialogue
         {
             canva.SetActive(true);
             player1.dialogue = true;
-            NewDialogue("Iedereen goed opgelet");
-            NewDialogue("Want dit is je grote kans.");
-            NewDialogue("Luister goed naar wat ik zeg");
-            NewDialogue("Want dit is de KabouterDans");
+            CreateDialogue("Iedereen goed opgelet");
+            CreateDialogue("Want dit is je grote kans.");
+            CreateDialogue("Luister goed naar wat ik zeg");
+            CreateDialogue("Want dit is de KabouterDans");
             canva.transform.GetChild(1).gameObject.SetActive(true);
         }
     }
 
-    void NewDialogue(string text)
+    void CreateDialogue(string text) // Clones the dialogue template and puts on a Text and Tag
     {
         GameObject template_clone = Instantiate(d_template, d_template.transform);
         template_clone.transform.parent = canva.transform;
@@ -32,7 +32,7 @@ public class NPCSystem : MonoBehaviour
         template_clone.tag = "clone";
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other) // If enters Trigger Area, Player will get detected
     {
         if(other.name == "PlayerBody")
         {
@@ -40,7 +40,7 @@ public class NPCSystem : MonoBehaviour
         }
     }
 
-    private void OnTriggerExit(Collider other)
+    private void OnTriggerExit(Collider other) // If exits Trigger Area, Player will not be detected anymore and the clones will get destroyed 
     {
         player_detection = false;
         //Destroy Clones
