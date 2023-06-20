@@ -9,6 +9,7 @@ TagManager:
   - IronPlates
   - Nails
   - Screw
+  - clone
   layers:
   - Default
   - TransparentFX
