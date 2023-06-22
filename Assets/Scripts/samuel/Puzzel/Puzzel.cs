@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class Puzzel : MonoBehaviour
 {
-    public int RightOrder;
-    public int LeverIndex = 0;
+    private int RightOrder = 1234;
     private string rightOrderString;
     private int currentIndex = 0;
+    public int LeverIndex = 0;
 
     private void Start()
     {
@@ -19,7 +19,7 @@ public class Puzzel : MonoBehaviour
         string leverIndexString = LeverIndex.ToString();
 
         if (leverIndexString == rightOrderString[currentIndex].ToString())
-        {
+        { 
             currentIndex++;
 
             if (currentIndex == rightOrderString.Length)
