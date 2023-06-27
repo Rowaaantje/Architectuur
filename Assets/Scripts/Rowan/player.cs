@@ -48,7 +48,7 @@ public class player : MonoBehaviour
     Vector3 slopeMoveDirection;
 
     [Header("Gravity")]
-    [SerializeField] public float gravity;
+    [SerializeField] float gravity;
 
     Rigidbody rb;
 
@@ -124,7 +124,8 @@ public class player : MonoBehaviour
 
     void Gravity()
     {
-        rb.AddForce(0, -gravity, 0);
+        //rb.AddForce(0, -gravity, 0);
+        rb.AddForce(Physics.gravity);
     }
 
 

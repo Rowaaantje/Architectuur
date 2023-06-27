@@ -31,6 +31,10 @@ public class player1 : MonoBehaviour
 
 
     [Header("Ground Check")]
+
+    [SerializeField] Transform groundCheck;
+    [SerializeField] float groundDistance = 0.2f;
+
     public float playerHeight;
     public LayerMask whatIsGround;
     bool grounded;
@@ -39,6 +43,9 @@ public class player1 : MonoBehaviour
     public float maxSlopeAngle;
     public RaycastHit slopeHit;
     public bool exitingSlope;
+
+    [Header("Gravity")]
+    [SerializeField] public float gravity;
 
     public Transform orientation;
 
@@ -73,11 +80,15 @@ public class player1 : MonoBehaviour
     private void Update()
     {
         // ground check
-        grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, whatIsGround); //maak  van 0.1f een nieuwe float [SerializeField] float groundDistance = 0.2f; en noem het hier
+        // grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, whatIsGround); //maak  van 0.1f een nieuwe float [SerializeField] float groundDistance = 0.2f; en noem het hier
+        grounded = Physics.CheckSphere(groundCheck.position, groundDistance, whatIsGround);
+
+        
 
         MyInput();
         SpeedControl();
         StateHandler();
+        Gravity();
 
         // handle drag
         if (grounded)
@@ -152,6 +163,13 @@ public class player1 : MonoBehaviour
             state = MovementState.air;
         }
     }
+
+    void Gravity()
+    {
+        // rb.AddForce(0, -gravity, 0);
+        rb.AddForce(Physics.gravity);
+    }
+
 
     private void MovePlayer()
     {

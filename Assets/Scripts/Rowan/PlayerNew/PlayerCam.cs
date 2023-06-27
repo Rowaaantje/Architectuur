@@ -25,17 +25,12 @@ public class PlayerCam : MonoBehaviour
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
             MyInput();
-
-            
         }
         else
         {
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
         }
-
-        
-
     }
     void MyInput()
     {
