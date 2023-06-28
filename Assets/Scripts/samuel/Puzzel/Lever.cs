@@ -26,9 +26,6 @@ public class Lever : MonoBehaviour
             if (PlayerInZone && Input.GetKeyDown(KeyCode.F))
             {
                 anim.SetTrigger("pull_1");
-                anim.SetTrigger("pull_2");
-                anim.SetTrigger("pull_3");
-                anim.SetTrigger("pull_4");
                 txtToDisplay.SetActive(false);
 
                 puzzle.LeverIndex = OrderIndex;
