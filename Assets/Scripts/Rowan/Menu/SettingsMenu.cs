@@ -16,6 +16,13 @@ public class SettingsMenu : MonoBehaviour
     Resolution[] resolutions;
     // public AudioMixer audioMixer;
 
+    public void Update()
+    {
+        float volumeValue = volumeSlider.value;
+        PlayerPrefs.SetFloat("VolumeValue", volumeValue);
+        LoadValues();
+    }
+
     private void Start()//instantly load changed settings
     {
         LoadValues();
@@ -69,21 +76,17 @@ public class SettingsMenu : MonoBehaviour
         volumeTextUI.text = volume.ToString("0.0");
     }
 
-    public void SaveVolumeButton()
-    {
-        float volumeValue = volumeSlider.value;
-        PlayerPrefs.SetFloat("VolumeValue", volumeValue);
-        // audioMixer.SetFloat("MainVolume", volumeValue);
-        LoadValues();
-    }
+    // public void SaveVolumeButton()
+    // {
+    //     float volumeValue = volumeSlider.value;
+    //     PlayerPrefs.SetFloat("VolumeValue", volumeValue);
+    //     LoadValues();
+    // }
 
     void LoadValues()
     {
         float volumeValue = PlayerPrefs.GetFloat("VolumeValue");
         volumeSlider.value = volumeValue;
         AudioListener.volume = volumeValue;
-
-        // audioMixer.volume = volumeValue;
-
     }
 }
