@@ -34,7 +34,7 @@ public class NPCSystem : MonoBehaviour
 
     private void OnTriggerEnter(Collider other) // If enters Trigger Area, Player will get detected
     {
-        if(other.name == "PlayerBody")
+        if(other.name == "PlayerBody") //! let op noem de caspule wat hier staat 
         {
             player_detection = true;
         }

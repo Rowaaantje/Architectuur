@@ -11,7 +11,7 @@ public class playerLook : MonoBehaviour
     [SerializeField] Transform cam; //we want to reference the camera holder in the inspector
     
 
-     [SerializeField] Transform orientation;
+    [SerializeField] Transform orientation;
     float mouseX;
     float mouseY;
 
