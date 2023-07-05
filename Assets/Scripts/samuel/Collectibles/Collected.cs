@@ -13,10 +13,6 @@ public class Collected : MonoBehaviour
 
     private Collectible collectible;
 
-    private void Start()
-    {
-        
-    }
     /*private void Update()
     {
         collectible = GetComponentInChildren<Collectible>();
