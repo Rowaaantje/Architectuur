@@ -33,6 +33,7 @@ public class Collectible : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             PlayerInZone = true;
+            gameObject.SetActive(false);
           
         }
 
