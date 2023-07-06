@@ -8,7 +8,7 @@ public class LoadAndQuit : MonoBehaviour
 
     public void LoadScene()
     {
-        SceneManager.LoadScene("PlayerTesting");//game scene
+        SceneManager.LoadScene("Samuel");//game scene
     }
 
     public void QuitGame()

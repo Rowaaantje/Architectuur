@@ -13,6 +13,8 @@ public class player1 : MonoBehaviour
 
     public float groundDrag;
 
+
+
     [Header("Jumping")]
     public float jumpForce;
     public float jumpCooldown;
@@ -31,7 +33,6 @@ public class player1 : MonoBehaviour
 
 
     [Header("Ground Check")]
-
     [SerializeField] Transform groundCheck;
     [SerializeField] float groundDistance = 0.2f;
 
@@ -43,9 +44,6 @@ public class player1 : MonoBehaviour
     public float maxSlopeAngle;
     public RaycastHit slopeHit;
     public bool exitingSlope;
-
-    [Header("Gravity")]
-    [SerializeField] public float gravity;
 
     public Transform orientation;
 
@@ -124,7 +122,7 @@ public class player1 : MonoBehaviour
         if(Input.GetKeyDown(crouchKey)) //if crouchKey pressed schrink player down by settling local scale to new vector3 keep x & z te same but change  the y scale to your crouchYScale
         {
             transform.localScale = new Vector3(transform.localScale.x, crouchYScale, transform.localScale.z);
-            rb.AddForce(Vector3.down * 5f, ForceMode.Impulse); // add gravity when player crouched reason for this is when player crouches he wil be in mid air so we apply force to player so it wil go ground fast
+            // rb.AddForce(Vector3.down * 5f, ForceMode.Impulse); // add gravity when player crouched reason for this is when player crouches he wil be in mid air so we apply force to player so it wil go ground fast
         }
 
         // stop crouch
@@ -223,17 +221,15 @@ public class player1 : MonoBehaviour
     {
         exitingSlope = true;
 
-
         // reset y velocity
         //rb.velocity = new Vector3(rb.velocity.x, 5f, rb.velocity.z); // consistant jumping same heigt every time 
 
-        rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z); //dit 
+        rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z); 
         rb.AddForce(transform.up * jumpForce, ForceMode.Impulse);     //en dit zorg for inconsistant jumping dus soms spring je hoger dan een andere keer
     }
     private void ResetJump()
     {
         readyToJump = true;
-
         exitingSlope = false;
     }
 
@@ -241,7 +237,7 @@ public class player1 : MonoBehaviour
     {
         if(Physics.Raycast(transform.position, Vector3.down, out slopeHit, playerHeight * 0.5f + 0.2f)) // out slopeHit this stores the object that we hit in the slopeHit Variable
         {
-            Debug.DrawRay(transform.position, Vector3.down, Color.green); // !!!!!! testing pruposes
+            Debug.DrawRay(transform.position, Vector3.down, Color.blue); // !!!!!! testing pruposes
 
             float angle = Vector3.Angle(Vector3.up, slopeHit.normal); // calculate how steep the slope is 
             return angle < maxSlopeAngle && angle != 0; // we want the bool to return true if the angle is smaller then oure maxSlope Angle & not 0
